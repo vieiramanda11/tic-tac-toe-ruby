@@ -60,5 +60,6 @@ class Game
        @board_game.board[2] == @board_game.board[5] && @board_game.board[2] == @board_game.board[9]
        @board_game.board[0] == @board_game.board[4] && @board_game.board[0] == @board_game.board[8]
        @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
+       true
   end
 end
