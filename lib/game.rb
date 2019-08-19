@@ -62,4 +62,16 @@ class Game
        @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
        true
   end
+
+  def winner?
+    true if win_conditions
+  end
+
+  def winner
+    @current_player == @player1 ? @player2.name : @player1.name
+  end
+
+  def draw?
+    true if @board_game.board.none? { |b| b.is_a?(integer) }
+  end
 end
