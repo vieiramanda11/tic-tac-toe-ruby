@@ -23,6 +23,7 @@ class Board
     puts '1 | 2 | 3'
     puts '4 | 5 | 6'
     puts '7 | 8 | 9'
+    puts '\n'
   end
 end
   
