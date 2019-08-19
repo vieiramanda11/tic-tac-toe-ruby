@@ -3,8 +3,8 @@
 # Player's class
 class Player
   attr_reader :player, :symbol
-  def initialize
+  def initialize(player, symbol)
     @player = player
-    @symbol = symbol 
+    @symbol = symbol
   end
 end

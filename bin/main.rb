@@ -8,30 +8,25 @@ game = Game.new
 
 puts 'Welcome to Tic Tac Toe game!'
 puts 'Player 1 write your name: '
-first = gets.chomp
-
-until game.symbol1 == 'X' || game.symbol1 == 'O'
-  puts 'Choose your symbol: '
-  symbol1 = gets.chomp.upcase!
-end
-
-game.symbol2 = game.symbol1 == 'X' ? 'O' : 'X'
+first = gets.chomp.capitalize!
+puts "#{first} your symbol is X"
+game.symbol1 = 'X'
 
 puts 'Player 2 write your name: '
-second = gets.chomp
+second = gets.chomp.capitalize!
+puts "#{second} your symbol is O"
+game.symbol2 = 'O'
 
 game.players(first, second)
 
 game.board_game.draw_board
 
-until game.winner? || game.draw?
-  game.player_move
-end
+game.player_move until game.win? || game.draw?
 
-if game.winner?
-  puts '#{game.winner} congratulations, you won the game!'
+if game.win?
+  puts "#{game.winner} congratulations, you won the game!"
 else
-    puts 'Too bad. It\'s a draw.'
+  puts 'Too bad. It\'s a draw.'
 end
 
 puts 'Thank you for playing.'
