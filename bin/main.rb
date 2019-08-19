@@ -23,3 +23,15 @@ second = gets.chomp
 game.players(first, second)
 
 game.board_game.draw_board
+
+until game.winner? || game.draw?
+  game.player_move
+end
+
+if game.winner?
+  puts '#{game.winner} congratulations, you won the game!'
+else
+    puts 'Too bad. It\'s a draw.'
+end
+
+puts 'Thank you for playing.'
