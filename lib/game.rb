@@ -72,6 +72,6 @@ class Game
   end
 
   def draw?
-    true if @board_game.board.none? { |b| b.is_a?(integer) }
+    true if @board_game.board.none? { |b| b.is_a?(Integer) }
   end
 end
