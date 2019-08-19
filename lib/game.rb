@@ -50,4 +50,15 @@ class Game
     @board_game.legend
     @end_round = false 
   end
+
+  def win_conditions
+    if @board_game.board[0] == @board_game.board[1] && @board_game.board[0] == @board_game.board[2]
+       @board_game.board[3] == @board_game.board[4] && @board_game.board[3] == @board_game.board[5]
+       @board_game.board[6] == @board_game.board[7] && @board_game.board[6] == @board_game.board[8]
+       @board_game.board[0] == @board_game.board[3] && @board_game.board[0] == @board_game.board[6]
+       @board_game.board[1] == @board_game.board[4] && @board_game.board[1] == @board_game.board[7]
+       @board_game.board[2] == @board_game.board[5] && @board_game.board[2] == @board_game.board[9]
+       @board_game.board[0] == @board_game.board[4] && @board_game.board[0] == @board_game.board[8]
+       @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
+  end
 end
