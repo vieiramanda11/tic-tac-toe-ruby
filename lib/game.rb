@@ -34,8 +34,6 @@ class Game
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player1.symbol
           @end_round = true
-        elsif @board_game.board[@player_input] = @player1.symbol || @player2.symbol
-          puts 'This place is not available.'
         end
       else
         puts "#{@player2.player} Pick a place in the board choosing a number between 1 and 9 to put your symbol"
@@ -44,8 +42,6 @@ class Game
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player2.symbol
           @end_round = true
-        elsif @board_game.board[@player_input] = @player1.symbol || @player2.symbol
-          puts 'This place is not available.'
         end
       end
     end

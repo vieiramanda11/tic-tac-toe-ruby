@@ -5,17 +5,16 @@ require_relative '../lib/game.rb'
 require_relative '../lib/player.rb'
 
 game = Game.new
+game.symbol1 = 'X'
+game.symbol2 = 'O'
 
 puts 'Welcome to Tic Tac Toe game!'
 puts 'Player 1 write your name: '
 first = gets.chomp.capitalize!
 puts "#{first} your symbol is X"
-game.symbol1 = 'X'
-
 puts 'Player 2 write your name: '
 second = gets.chomp.capitalize!
 puts "#{second} your symbol is O"
-game.symbol2 = 'O'
 
 game.players(first, second)
 
