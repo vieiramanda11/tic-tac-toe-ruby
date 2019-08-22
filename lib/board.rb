@@ -39,13 +39,4 @@ class Board
       true
     end
   end
-=begin
-  def draw?
-    false if @board.all? { |idx| idx.is_a?(Integer) }
-  end
-
-  def win?
-    true if win_dig || win_ver || win_hor
-  end
-=end
 end
