@@ -28,7 +28,7 @@ class Game
   def player_move
     until @end_round
       if @current_player == @player1
-        puts "#{@player1.player} Pick a place in the board choosing a number between 1 and 9 to put your symbol"
+        puts "#{@player1.player} Choose a number between 1 and 9 to put your symbol."
         @player_input = gets.chomp.to_i
         @player_input -= 1
         if @board_game.board[@player_input].is_a?(Integer)
@@ -36,7 +36,7 @@ class Game
           @end_round = true
         end
       else
-        puts "#{@player2.player} Pick a place in the board choosing a number between 1 and 9 to put your symbol"
+        puts "#{@player2.player} Choose a number between 1 and 9 to put your symbol."
         @player_input = gets.chomp.to_i
         @player_input -= 1
         if @board_game.board[@player_input].is_a?(Integer)
@@ -50,38 +50,38 @@ class Game
     @end_round = false
   end
 
-  def win_conditions_horizontal
+  def win_hor
     if @board_game.board[0] == @board_game.board[1] && @board_game.board[0] == @board_game.board[2] ||
        @board_game.board[3] == @board_game.board[4] && @board_game.board[3] == @board_game.board[5] ||
-       @board_game.board[6] == @board_game.board[7] && @board_game.board[6] == @board_game.board[8] 
-       true
-    end
-end
-
-  def win_conditions_diagonal
-    if @board_game.board[0] == @board_game.board[4] && @board_game.board[0] == @board_game.board[8] ||
-       @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
-       true
+       @board_game.board[6] == @board_game.board[7] && @board_game.board[6] == @board_game.board[8]
+      true
     end
   end
-  
-  def win_conditions_vertical
+
+  def win_dig
+    if @board_game.board[0] == @board_game.board[4] && @board_game.board[0] == @board_game.board[8] ||
+       @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
+      true
+    end
+  end
+
+  def win_ver
     if @board_game.board[0] == @board_game.board[3] && @board_game.board[0] == @board_game.board[6] ||
        @board_game.board[1] == @board_game.board[4] && @board_game.board[1] == @board_game.board[7] ||
-       @board_game.board[2] == @board_game.board[5] && @board_game.board[2] == @board_game.board[9] 
-       true
+       @board_game.board[2] == @board_game.board[5] && @board_game.board[2] == @board_game.board[9]
+      true
     end
+  end
+
+  def draw?
+    false if @board_game.board.all? { |b| b.is_a?(Integer) }
   end
 
   def win?
-    true if win_conditions_diagonal || win_conditions_horizontal || win_conditions_vertical
+    true if win_dig || win_ver || win_hor
   end
 
   def winner
     @current_player == @player1 ? @player2.player : @player1.player
-  end
-
-  def draw?
-    true if @board_game.board.none? { |b| b.is_a?(Integer) }
   end
 end
