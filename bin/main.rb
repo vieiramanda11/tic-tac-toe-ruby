@@ -5,6 +5,7 @@ require_relative '../lib/game.rb'
 require_relative '../lib/player.rb'
 
 game = Game.new
+board = Board.new
 
 puts 'Welcome to Tic Tac Toe game!'
 puts 'Player 1 write your name: '
@@ -20,7 +21,7 @@ puts "#{second_player} your symbol is O"
 
 game.players(first_player, second_player)
 
-game.board_game.draw_board
+board.draw_board
 
 game.player_move until game.win? || game.draw?
 

@@ -48,35 +48,12 @@ class Game
     @end_round = false
   end
 
-  def win_hor
-    if @board_game.board[0] == @board_game.board[1] && @board_game.board[0] == @board_game.board[2] ||
-       @board_game.board[3] == @board_game.board[4] && @board_game.board[3] == @board_game.board[5] ||
-       @board_game.board[6] == @board_game.board[7] && @board_game.board[6] == @board_game.board[8]
-      true
-    end
-  end
-
-  def win_dig
-    if @board_game.board[0] == @board_game.board[4] && @board_game.board[0] == @board_game.board[8] ||
-       @board_game.board[2] == @board_game.board[4] && @board_game.board[2] == @board_game.board[6]
-      true
-    end
-  end
-
-  def win_ver
-    if @board_game.board[0] == @board_game.board[3] && @board_game.board[0] == @board_game.board[6] ||
-       @board_game.board[1] == @board_game.board[4] && @board_game.board[1] == @board_game.board[7] ||
-       @board_game.board[2] == @board_game.board[5] && @board_game.board[2] == @board_game.board[9]
-      true
-    end
-  end
-
   def draw?
     false if @board_game.board.all? { |idx| idx.is_a?(Integer) }
   end
 
   def win?
-    true if win_dig || win_ver || win_hor
+    true if @board_game.win_dig || @board_game.win_ver || @board_game.win_hor
   end
 
   def winner
