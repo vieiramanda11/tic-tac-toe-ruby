@@ -72,15 +72,11 @@ class Game
   end
 
   def draw?
-    if @board_game.board.all? { |idx| idx.is_a?(Integer) }
-      false
-    end
+    false if @board_game.board.all? { |idx| idx.is_a?(Integer) }
   end
 
   def win?
-    if win_dig || win_ver || win_hor
-      true
-    end
+    true if win_dig || win_ver || win_hor
   end
 
   def winner
