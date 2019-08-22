@@ -11,8 +11,8 @@ class Game
   def initialize
     @board_game = Board.new
     @current_player = @player1
-    @symbol1 = ''
-    @symbol2 = ''
+    @symbol1 = 'X'
+    @symbol2 = 'O'
     @end_round = false
   end
 
@@ -72,11 +72,15 @@ class Game
   end
 
   def draw?
-    false if @board_game.board.all? { |b| b.is_a?(Integer) }
+    if @board_game.board.all? { |idx| idx.is_a?(Integer) }
+      false
+    end
   end
 
   def win?
-    true if win_dig || win_ver || win_hor
+    if win_dig || win_ver || win_hor
+      true
+    end
   end
 
   def winner
