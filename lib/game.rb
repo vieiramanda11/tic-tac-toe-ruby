@@ -26,19 +26,17 @@ class Game
   end
 
   def player_move
-    until @end_round
+    while @end_round == false
       if @current_player == @player1
         puts "#{@player1.player} Choose a number between 1 and 9 to put your symbol."
-        @player_input = gets.chomp.to_i
-        @player_input -= 1
+        @player_input = gets.chomp.to_i - 1
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player1.symbol
           @end_round = true
         end
       else
         puts "#{@player2.player} Choose a number between 1 and 9 to put your symbol."
-        @player_input = gets.chomp.to_i
-        @player_input -= 1
+        @player_input = gets.chomp.to_i - 1
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player2.symbol
           @end_round = true
