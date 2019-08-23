@@ -36,15 +36,14 @@ class Game
 
   def player_move
     while @end_round == false
+      player_message
       if @current_player == @player1
-        player_message
         @player_input = @input.player_input
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player1.symbol
           @end_round = true
         end
       else
-        player_message
         @player_input = @input.player_input
         if @board_game.board[@player_input].is_a?(Integer)
           @board_game.board[@player_input] = @player2.symbol
