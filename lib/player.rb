@@ -8,3 +8,10 @@ class Player
     @symbol = symbol
   end
 end
+
+# Player Input class
+class PlayerInput
+  def player_input
+    @player_input = gets.chomp.to_i - 1
+  end
+end
