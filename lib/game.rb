@@ -49,7 +49,7 @@ class Game
   end
 
   def draw?
-    false if @board_game.board.all? { |idx| idx.is_a?(Integer) }
+    true if @board_game.board.none? { |idx| idx.is_a?(Integer) }
   end
 
   def win?
