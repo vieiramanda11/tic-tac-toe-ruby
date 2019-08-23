@@ -4,31 +4,38 @@ require_relative '../lib/board.rb'
 require_relative '../lib/game.rb'
 require_relative '../lib/player.rb'
 
-game = Game.new
-board = Board.new
+# class play game
+class PlayGame
+  def self.start
+    game = Game.new
+    board = Board.new
 
-puts 'Welcome to Tic Tac Toe game!'
-puts 'Player 1 write your name: '
+    puts 'Welcome to Tic Tac Toe game!'
+    puts 'Player 1 write your name: '
 
-first_player = gets.chomp.capitalize!
+    first_player = gets.chomp.capitalize!
 
-puts "#{first_player} your symbol is X"
-puts 'Player 2 write your name: '
+    puts "#{first_player} your symbol is X"
+    puts 'Player 2 write your name: '
 
-second_player = gets.chomp.capitalize!
+    second_player = gets.chomp.capitalize!
 
-puts "#{second_player} your symbol is O"
+    puts "#{second_player} your symbol is O"
 
-game.players(first_player, second_player)
+    game.players(first_player, second_player)
 
-board.draw_board
+    board.draw_board
 
-game.player_move until game.win? || game.draw?
+    game.player_move until game.win? || game.draw?
 
-if game.win?
-  puts "#{game.winner} congratulations, you won the game!"
-else
-  puts "Too bad. It's a draw."
+    if game.win?
+      puts "#{game.winner} congratulations, you won the game!"
+    else
+      puts "Too bad. It's a draw."
+    end
+
+    puts 'Thank you for playing.'
+  end
 end
 
-puts 'Thank you for playing.'
+PlayGame.start
