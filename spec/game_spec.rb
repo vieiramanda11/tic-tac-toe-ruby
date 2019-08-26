@@ -40,4 +40,10 @@ RSpec.describe Game do
       expect(game.win?).to eql(true)
     end
   end
+  describe "draw?" do
+    it "should return true when the game is a draw" do
+      game.board_game.board = ['O', 'X', 'O', 'O', 'X', 'X', 'X', 'O', 'O']
+      expect(game.draw?).to eql(true)
+    end
+  end
 end
