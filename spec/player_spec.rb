@@ -20,9 +20,14 @@ RSpec.describe Player do
 end
 
 # Testing input_player class
+=begin
 RSpec.describe PlayerInput do
   describe "#player_input" do
-    it "ha" do
+    let(:player_input) { PlayerInput.new }
+    it "should return the message" do
+      allow(player_input.player_input).to receive(-5)
+      expect(player_input.player_input).to eql('Choose a positive number')
     end
   end
 end
+=end
