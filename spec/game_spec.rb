@@ -4,6 +4,12 @@ require_relative '../lib/game.rb'
 
 RSpec.describe Game do
   let(:game) { Game.new }
+  let(:players) { game.players('Amanda', 'Charli') }
+
+  describe "#players" do
+    it "should return the second player witch is the current one" do
+      expect(players.player).to eql("Charli")
+  end
 
   describe "#win?" do
     it "should return true when the first row of the board is filled with the same symbol" do
