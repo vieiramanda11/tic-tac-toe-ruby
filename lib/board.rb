@@ -35,7 +35,7 @@ class Board
   def win_ver
     if @board[0] == @board[3] && @board[0] == @board[6] ||
        @board[1] == @board[4] && @board[1] == @board[7] ||
-       @board[2] == @board[5] && @board[2] == @board[9]
+       @board[2] == @board[5] && @board[2] == @board[8]
       true
     end
   end
