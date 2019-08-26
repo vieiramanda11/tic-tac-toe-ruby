@@ -4,7 +4,6 @@ require_relative '../lib/game.rb'
 
 RSpec.describe Game do
   let(:game) { Game.new }
-  #let(:board) { Board.new }
 
   describe "#win?" do
     it "should return true when the first row of the board is filled with the same symbol" do
