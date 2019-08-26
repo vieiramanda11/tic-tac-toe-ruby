@@ -5,8 +5,7 @@ require_relative 'board.rb'
 
 # Game class
 class Game
-  attr_reader :board_game, :player1, :player2
-  attr_accessor :symbol1, :symbol2
+  attr_reader :board_game, :player1, :player2, :symbol1, :symbol2
 
   def initialize
     @input = PlayerInput.new
