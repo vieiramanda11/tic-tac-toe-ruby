@@ -13,5 +13,11 @@ end
 class PlayerInput
   def player_input
     @player_input = gets.chomp.to_i - 1
+    if @player_input >= 0
+      @player_input = @player_input
+    else
+      puts 'Choose a positive number'
+      @player_input = gets.chomp.to_i - 1
+    end
   end
 end
