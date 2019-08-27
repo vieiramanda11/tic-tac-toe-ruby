@@ -9,6 +9,7 @@ RSpec.describe Game do
   describe "#players" do
     it "should return the second player witch is the current one" do
       expect(players.player).to eql("Charli")
+    end
   end
 
   describe "#win?" do
