@@ -8,12 +8,12 @@ RSpec.describe Player do
   let(:symbol) { 'X' }
   let(:player) { Player.new('Amanda', 'X') }
 
-  context "#initialize" do
-    it "when initialize the name should match" do
+  context '#initialize' do
+    it 'when initialize the name should match' do
       expect(player.player).to eql(name)
     end
 
-    it "when initialize the symbol should match" do
+    it 'when initialize the symbol should match' do
       expect(player.symbol).to eql(symbol)
     end
   end
